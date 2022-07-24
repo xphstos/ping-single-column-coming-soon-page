@@ -1,0 +1,103 @@
+@use "sass:color" as *;
+@use "../functions" as *;
+@use "../mixins" as *;
+@use "../helpers" as *;
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: 1rem;
+
+  &__label {
+    flex: 1 1 20rem;
+
+    &-text {
+      @extend %sr-only;
+    }
+
+    &-error {
+      text-align: left;
+      color: v("secondary-400");
+      font-size: 0.875rem;
+      font-style: italic;
+      padding: 0.5rem 2rem;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+
+      &:empty {
+        display: none;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border-radius: 3.5rem;
+    color: v("off-black");
+    min-height: 3.5rem;
+    border: 2px solid v("accent-100");
+    padding: 0 fluid-rem(3rem, 6rem) 0 2rem;
+    transition: border-color 0.2s ease, color 0.2s ease;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: v("accent-100");
+    }
+  }
+
+  &__submit {
+    flex: 1 1 7rem;
+  }
+
+  &__message {
+    flex: 1;
+    opacity: 0;
+    text-align: center;
+    color: v("accent-400");
+    display: none;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 1.333;
+  }
+}
+
+@at-root {
+  .form {
+    &.has-errors {
+      .form__input {
+        color: v("secondary-400");
+        border-color: currentColor;
+
+        &::placeholder {
+          color: v("secondary-400");
+        }
+
+        &:-webkit-autofill,
+        &:-internal-autofill-selected {
+          border: 2px solid v("secondary-400");
+          -webkit-text-fill-color: v("secondary-400");
+        }
+      }
+      .form__label-error {
+        opacity: 1;
+      }
+    }
+    &.success {
+      .form__label,
+      .form__submit {
+        display: none;
+      }
+      .form__message {
+        opacity: 1;
+        display: block;
+        pointer-events: auto;
+      }
+    }
+  }
+}

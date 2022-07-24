@@ -1,0 +1,12 @@
+@use "../functions" as *;
+
+.header {
+  text-align: center;
+  padding-block: 5rem 3rem;
+
+  &__homelink {
+    &-logo {
+      width: fluid-rem(4rem, 6rem);
+    }
+  }
+}

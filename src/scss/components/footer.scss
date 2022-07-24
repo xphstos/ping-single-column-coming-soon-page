@@ -1,0 +1,15 @@
+@use "../functions" as *;
+
+.footer {
+  padding-block: 5rem 3rem;
+  text-align: center;
+
+  &__footer {
+    margin-bottom: 1.5rem;
+  }
+
+  &__copy {
+    font-size: 0.875rem;
+    color: v("grey");
+  }
+}

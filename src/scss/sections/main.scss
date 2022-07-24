@@ -1,0 +1,25 @@
+@use "../functions" as *;
+@use "../helpers" as *;
+
+.main {
+  @extend %container;
+  text-align: center;
+
+  &__title {
+    font-size: fluid-rem(2rem, 3rem);
+    margin-bottom: 0.5em;
+
+    span {
+      color: v("grey");
+      font-weight: 300;
+    }
+  }
+
+  &__description {
+    margin-bottom: 2em;
+  }
+
+  &__form {
+    margin-bottom: fluid-rem(3rem, 6rem, 375 768);
+  }
+}

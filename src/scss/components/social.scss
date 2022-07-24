@@ -1,0 +1,36 @@
+@use "sass:color" as *;
+@use "../functions" as *;
+@use "../mixins" as *;
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0;
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__link {
+    @include size(2rem);
+    color: v("accent-400");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    border: 1px solid adjust(c("grey"), $alpha: -0.8);
+    transition: border-color 0.2s ease, background-color 0.2s ease,
+      color 0.2s ease;
+
+    &:hover {
+      color: v("white");
+      background-color: v("accent-400");
+      border-color: v("accent-400");
+    }
+  }
+
+  &__icon {
+    @include size(0.875rem);
+  }
+}

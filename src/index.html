@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Ping coming soon page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./scss/style.scss" />
+  </head>
+  <body>
+    <include src="partials/header.html"></include>
+    <main class="main">
+      <h1 class="main__title"><span>We are launching</span> soon!</h1>
+      <p class="main__description">Subscribe and get notified</p>
+      <include
+        src="partials/form.html"
+        locals='{
+      "classname": "main__form"
+     }'
+      ></include>
+      <picture class="main__graphic">
+        <source srcset="./images/illustration-dashboard.png" />
+        <img
+          src="./images/illustration-dashboard.png"
+          alt=""
+          role="presentation"
+          class="main__graphic-image"
+        />
+      </picture>
+    </main>
+    <include src="partials/footer.html"></include>
+    <script src="./js/app.js" type="module"></script>
+  </body>
+</html>
